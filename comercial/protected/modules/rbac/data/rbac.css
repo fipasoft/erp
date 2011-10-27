@@ -1,0 +1,105 @@
+
+table#rbacItem
+{
+    padding: 0px 0px 0px 0px;
+	margin: 0px;
+    text-aligment:middle;
+}
+
+
+th#rbacItem
+{
+	border: 1px solid #bebebe;
+    border-bottom-color: #000000;
+	padding: 0px 2px 0px 4px;
+	margin: 0px;
+}
+th#rbacItem0
+{
+	color: #141414;
+	border: 1px solid #bebebe;
+    border-bottom-color: #000000;
+	padding: 0px 2px 0px 4px;
+	margin: 0px;
+}
+th#rbacItem1
+{
+	color: #0000dd;
+	border: 1px solid #bebebe;
+    border-bottom-color: #000000;
+	padding: 0px 2px 0px 4px;
+	margin: 0px;
+}
+th#rbacItem2 
+{
+	color: #dd0000;
+	border: 1px solid #bebebe;
+    border-bottom-color: #000000;
+	padding: 0px 2px 0px 4px;
+	margin: 0px;
+}
+
+a#rbacItem2
+{
+	color: #bb0000;
+}
+
+a#rbacItem1
+{
+	color: #0000bb;
+}
+
+a#rbacItem0
+{
+	color: #141414;
+}
+
+
+td#rbacItem
+{
+    border: 1px solid #999999;
+    padding: 0px 2px 0px 4px;
+	margin: 0px;
+    text-aligment:middle;
+}
+
+table#rbacFolder
+{
+    border-left: 1px solid #cccccc;
+	padding: 0px;
+	margin: 0px 0px 0px 20px;
+}
+
+td#rbacFolder
+{
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+}
+
+div#messageError
+{
+	clear: both;
+	padding: 2px;
+	border: 1px solid #cd0000;
+	background-color: #ffcccc;
+}
+div#messageSuccess
+{
+	clear: both;
+	padding: 2px;
+	border: 1px solid #00cd00;
+	background-color: #ccffcc;
+}
+div#messageWarning
+{
+	clear: both;
+	padding: 2px;
+	border: 1px solid #cdcd00;
+	background-color: #ffffcc;
+}
+div#messageInfo
+{
+	clear: both;
+	padding: 2px;
+	border: 1px solid #cccccc;
+}

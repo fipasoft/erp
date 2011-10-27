@@ -1,0 +1,64 @@
+/* Menu*/
+#menuportal{font-family:Arial, Helvetica, sans-serif; font-size:13px; background-image:url('img/fmenu.png');background-color:#00264C;position:relative;width:100%;}
+/*#container{margin:0 auto; width:600px;margin-top:30px;}*/
+#menuportal a:link, a:visited{ text-decoration:none;}
+#menuportal a:hover{text-decoration:underline;}
+#menuportal ul, li{margin:0; border:0; list-style:none; padding:0;}
+#menuportal ul{border-bottom:dotted 1px #DEDEDE;}
+#menuportal ul{height:21px;}
+#menuportal li{display:inline;}
+#menuportal .menuitem span{ font-size:11px;padding:4px 2px 4px 6px; border-bottom:none; margin-right:10px; line-height:18px;}
+	#menuportal .menuitem span a{font-weight:bold;}
+	#menuportal .menuitem span.caja:hover{border:dotted 1px #DEDEDE;border-right:none;border-bottom:none;}
+	.menuitem .arrow{margin-left:4px; cursor:pointer; }
+.menuitem .sub_menu{display:none; position:absolute; border:solid 1px #DEDEDE; border-top:none; border-right:solid 1px #999999; border-bottom:solid 1px #999999; padding:10px; top:20px; width:120px; background:#00264C;}
+	.menuitem .sub_menu a:link, .sub_menu a:visited, .sub_menu a:hover{
+	display:block; font-size:11px; padding:4px; color:#0063DC; font-weight:bold; text-decoration:none;}
+.menuitem .sub_menu .item_line{border-top:solid 1px #DEDEDE;}
+
+/*
+body.l10 #primary{
+margin-top:30px;
+margin-bottom:10px;
+}
+*/
+/* componente documentos  */
+
+div.cmppublicacion{
+margin-top: 5px;
+}
+
+div.cmppublicacion div.lista{
+width: 50%;display:block;
+_margin-top:10px;
+margin-left:30%;
+_margin-left: 5%; /*Para Internet Explorer */
+}
+
+div.cmppublicacion div.lista fieldset{
+width:85%;
+}
+
+div.cmppublicacion div.lista fieldset ul.documentos{
+list-style:none;
+}
+
+div.cmppublicacion div.lista fieldset ul.documentos a{
+text-decoration:none;color:#3366CC;
+}
+
+
+/*   footer  */
+
+#footer{
+-moz-border-radius:0 0 0 0;
+border-color:#DEDEDE #DEDEDE -moz-use-text-color;
+border-style:none none none;
+border-width:0 0 0;
+	
+height:100px;
+border-top:solid 1px #DEDEDE;
+background-color:#FFFFFF;
+
+}
+
