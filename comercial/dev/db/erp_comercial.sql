@@ -513,16 +513,14 @@ DROP TABLE IF EXISTS `erp_comercial`.`cotiestados`;
 CREATE TABLE  `erp_comercial`.`cotiestados` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cotizacion_id` int(10) unsigned NOT NULL,
-  `proestado_id` int(10) unsigned NOT NULL,
+  `cotiestado_id` int(10) unsigned NOT NULL,
   `modified_in` datetime NOT NULL,
   `observaciones` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ecotizaciones_FKIndex2` (`cotizacion_id`),
-  KEY `cotiestados_FKIndex2` (`proestado_id`),
-  KEY `cotiestados_FKIndex3` (`proestado_id`),
+  KEY `cotiestados_FKIndex2` (`cotiestado_id`),
   CONSTRAINT `cotiestados_ibfk_1` FOREIGN KEY (`cotizacion_id`) REFERENCES `cotizacion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `cotiestados_ibfk_2` FOREIGN KEY (`proestado_id`) REFERENCES `cotiestado` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `cotiestados_ibfk_3` FOREIGN KEY (`proestado_id`) REFERENCES `cotiestado` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `cotiestados_ibfk_2` FOREIGN KEY (`cotiestado_id`) REFERENCES `cotiestado` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -543,17 +541,17 @@ DROP TABLE IF EXISTS `erp_comercial`.`cotizacion`;
 CREATE TABLE  `erp_comercial`.`cotizacion` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ciclo_id` int(10) unsigned NOT NULL,
-  `proestado_id` int(10) unsigned NOT NULL,
+  `cotiestado_id` int(10) unsigned NOT NULL,
   `proyecto_id` int(10) unsigned NOT NULL,
   `nombre` varchar(32) DEFAULT NULL,
   `observaciones` varchar(255) DEFAULT NULL,
   `saved_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `cotizacion_FKIndex1` (`proyecto_id`),
-  KEY `cotizacion_FKIndex2` (`proestado_id`),
+  KEY `cotizacion_FKIndex2` (`cotiestado_id`),
   KEY `cotizacion_FKIndex3` (`ciclo_id`),
   CONSTRAINT `cotizacion_ibfk_1` FOREIGN KEY (`proyecto_id`) REFERENCES `proyecto` (`id`),
-  CONSTRAINT `cotizacion_ibfk_2` FOREIGN KEY (`proestado_id`) REFERENCES `cotiestado` (`id`),
+  CONSTRAINT `cotizacion_ibfk_2` FOREIGN KEY (`cotiestado_id`) REFERENCES `cotiestado` (`id`),
   CONSTRAINT `cotizacion_ibfk_3` FOREIGN KEY (`ciclo_id`) REFERENCES `ciclo` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
