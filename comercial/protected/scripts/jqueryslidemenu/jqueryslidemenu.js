@@ -7,8 +7,7 @@
 //Update: April 12th, 10: Fixed compat issue with jquery 1.4x
 
 //Specify full URL to down and right arrow images (23 is padding-right to add to top level LIs with drop downs):
-var arrowimages={down:['downarrowclass', 'down.gif', 23], right:['rightarrowclass', 'right.gif']}
-
+var arrowimages={down:['downarrowclass', '/erp/comercial/themes/fipa/img/system/down.gif', 23], right:['rightarrowclass', '/erp/comercial/themes/fipa/img/system/right.gif']}
 var jqueryslidemenu={
 
 animateduration: {over: 200, out: 100}, //duration of slide in/ out animation, in milliseconds
