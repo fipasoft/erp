@@ -10,7 +10,7 @@
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id',array('size'=>10,'maxlength'=>10)); ?>
 		
-		<?php echo $form->label($model,'Año'); ?>
+		<?php echo $form->label($model,'annio_id'); ?>
 		<select size="1" name="Ciclo[annio_id]" id="Ciclo_annio_id">
 			<option value="T">Todos</option>
 			<?php
@@ -28,7 +28,6 @@
 		<?php echo $form->label($model,'clave'); ?>
 		<?php echo $form->textField($model,'clave',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
-	<br/>
 	
 	<div class="row derecha">			
 		<?php echo CHtml::submitButton('Buscar'); ?>

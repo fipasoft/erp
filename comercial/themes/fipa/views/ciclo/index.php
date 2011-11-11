@@ -2,45 +2,44 @@
 $this->breadcrumbs=array(
 	'Ciclos',
 );
-
 ?>
 
 <h1>Ciclos</h1>
 
 <div class="menucrud">
  <?php
-	echo CHtml::link('Agregar <img src="'.Yii::app()->theme->baseUrl.'/img/system/nuevo.png"/>',
-							array('create'));
+	echo CHtml::link(
+		'<img src="'.Yii::app()->theme->baseUrl.'/img/system/buscar.png" alt="buscar"/> Buscar',
+		array('cursos'),
+		array('id'=>'btnBusqueda')
+	);
  ?> /
-<?php
-
-echo CHtml::link(' Buscar <img src="'.Yii::app()->theme->baseUrl.'/img/system/buscar.png"/>',array('cursos'),array('id'=>'btnBusqueda'));
-
+ <?php
+	echo 
+		CHtml::link(
+			'<img src="'.Yii::app()->theme->baseUrl.'/img/system/nuevo.png" alt="nuevo"/> Agregar',
+			array('create')
+		);
  ?>
 </div>
 
+<div class="search-form" id="divBusqueda" <?php if(!$model->filtros){ echo 'style="display:none;"'; } ?>>
+	<p>
+		De forma opcional puedes utilizar los siguientes operadores de comparaci&oacute;n
+		(<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+		or <b>=</b>).
+	</p>
+	
+	<?php $this->renderPartial('_search',array(
+		'model'=>$model,
+	)); ?>
 </div>
 
-<div class="search-form" id="divBusqueda" <?php if(!$model->filtros){ echo 'style="display:none;"'; } ?>>
-<p>
-De forma opcional puedes utilizar los siguientes operadores de comparaci&oacute;n
-(<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>).
-</p>
-
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-
-
 <?php
-
 	$cols = array(			
 			'id',
 			array(            
-            'name'=>'año',
+            'name'=>'a&ntilde;o',
             'value'=>'$data->annio->numero',
 	        ),
 	        'clave',  
@@ -54,8 +53,8 @@ or <b>=</b>).
 			
         );
          
-
-$this->widget('zii.widgets.grid.CGridView', array(
-	'dataProvider'=>$dataProvider,
-  	'columns'=> $cols,
-)); ?>
+	$this->widget('zii.widgets.grid.CGridView', array(
+		'dataProvider'=>$dataProvider,
+	  	'columns'=> $cols,
+	)); 
+?>
