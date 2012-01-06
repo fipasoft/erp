@@ -62,10 +62,9 @@ class CicloController extends Controller {
                 $model -> clave = $annio -> numero;
                 $model -> annio_id = $annio -> id;
                 if ($model -> save()) {
-
+                    Historial::entrada("Se agrego el ciclo ".$model->clave.".", "Ciclo", $model->id);
                     $transaction -> commit();
                     $this -> redirect(array('view', 'id' => $model -> id));
-
                 } else {
                     throw new Exception("Ocurrio un errro al crear el ciclo.", 1);
                 }
@@ -126,6 +125,7 @@ class CicloController extends Controller {
                     throw new Exception("Error al guardar el ciclo.");
                 }
 
+                Historial::entrada("Se edito el ciclo ".$model->clave.".", "Ciclo", $model->id);
                 $transaction -> commit();
                 $this -> redirect(array('view', 'id' => $model -> id));
             }
@@ -152,6 +152,8 @@ class CicloController extends Controller {
 
             $annio = Annio::model() -> find("numero='" . $model -> clave . "'");
             $annio -> delete();
+            Historial::entrada("Se elimino el ciclo ".$model->clave.".", "Ciclo", $model->id);
+            
 
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
