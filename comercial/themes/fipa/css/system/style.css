@@ -5,7 +5,11 @@ display: none;
 div.content legend{
 font-weight: bold;
 }
+div.content legend {
+margin-bottom:0;
+}
 div.content fieldset{
+-moz-border-radius:14px;
 background-color: #F5F5F5;
 line-height:165%;
 margin:0.3em auto;
@@ -193,7 +197,7 @@ color: #c00;
 font-size: 10px;
 }
 
-   .grid-view-loading
+.grid-view-loading
 {
 	background:url(loading.gif) no-repeat;
 }

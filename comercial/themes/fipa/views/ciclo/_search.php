@@ -11,7 +11,6 @@
 		<?php echo $form->label($model,'Año'); ?>
 		<?php echo $form->textField($model,'clave',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
-	<br/>
 	
 	<div class="row derecha">			
 		<?php echo CHtml::submitButton('Buscar'); ?>
