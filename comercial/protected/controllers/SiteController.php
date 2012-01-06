@@ -62,7 +62,7 @@ class SiteController extends Controller {
 			if ($model -> validate() && $model -> login()) {
 
 				//Establece las variables de session
-				$actual = Ciclo::model() -> find("1 ORDER BY clave DESC");
+				$actual = Ciclo::model() -> find("activo = '1'");
 				$session = new CHttpSession;
 				$session -> open();
 				$session['ciclo.id'] = $actual -> id;
