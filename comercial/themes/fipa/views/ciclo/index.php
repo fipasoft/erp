@@ -36,26 +36,25 @@ or <b>=</b>).
 
 
 <?php
-
-	$cols = array(			
-			'id',
-			array(            
-            'name'=>'año',
-            'value'=>'$data->annio->numero',
-	        ),
-	        'clave',  
-			);
-						
-	$cols[] = array(            // display a column with "view", "update" and "delete" buttons
+    $cols = array(
+            array(            
+            'name'=>'Año',
+            'value'=>'$data->clave.($data->activo? "<br/><span class=\'true\'>Activo</span>":"")',
+            'type'=>'raw'
+            )
+            );
+            
+	$cols[] = array(// display a column with "view", "update" and "delete" buttons
             'class'=>'CButtonColumn',
-             'template'=>'{update}{delete}',
-			'updateButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/editar.png',
-			'deleteButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/eliminar.png'
-			
-        );
-         
+            'template'=>'{update} {delete}',
+            'updateButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/editar.png',
+            'deleteButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/eliminar.png'
+            );
 
 $this->widget('zii.widgets.grid.CGridView', array(
-	'dataProvider'=>$dataProvider,
-  	'columns'=> $cols,
-)); ?>
+    'dataProvider'=>$dataProvider,
+    'columns'=> $cols,
+));
+
+
+?>

@@ -11,7 +11,16 @@
 
 	<div class="rowform">
 		<?php echo $form->label($model,'Año'); ?><br/>
-		<?php echo $form->textField($model,'clave',array('size'=>10,'maxlength'=>4,'id'=>'id1', 'class' => 'entero')); ?><br/>
+		<?php echo $form->textField($model,'clave',array('size'=>10,'maxlength'=>4,'id'=>'id1', 'class' => 'entero')); ?>
+		<br/>
+		<br/>
+        <?php echo $form->label($model,'Activo'); ?><br/>
+        <?php if(!$model->activo){ ?>
+            <?php echo $form->checkBox($model,'activo',array('value'=>1,)); ?><br/>
+        <?php }else{ ?>
+            <span class="true">Si</span>
+        <?php } ?>
+        
 		<?php echo $form->error($model,'clave'); ?>
 	</div>
 

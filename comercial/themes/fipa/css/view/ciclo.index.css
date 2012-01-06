@@ -1,0 +1,12 @@
+div.grid-view{
+    width: 250px;
+    margin:0 auto 0 auto;
+}
+
+.grid-view table.items th{
+    text-align: center;
+}
+
+.grid-view table.items td{
+    text-align: center;
+}
