@@ -43,9 +43,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   <?php }?>
   
   <script type="text/javascript" src="<?php echo $js_path ?>system/event/adddomloadevent.js"></script>
+  <script type="text/javascript" src="<?php echo $js_path ?>plugins/class.jquery.js"></script>
   <script type="text/javascript" src="<?php echo $js_path ?>system/sys.js"></script>
   <script type="text/javascript" src="<?php echo $js_path ?>system/funciones.js"></script>
-  <script type="text/javascript" src="<?php echo $js_path ?>plugins/tabla.jQuery.js"></script>
+  <script type="text/javascript" src="<?php echo $js_path ?>plugins/fvalidator.jquery.js"></script>
   
   <?php if(file_exists($basepath . 'javascript/view/' . $controlador . '.js')){?>
     <script type="text/javascript" src="<?php echo $js_path . 'view/' . $controlador ?>.js"></script>
