@@ -47,7 +47,7 @@ $this->breadcrumbs=array(
 						
 	$cols[] = array(            // display a column with "view", "update" and "delete" buttons
             'class'=>'CButtonColumn',
-			'viewButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/ver.png',
+             'template'=>'{update}{delete}',
 			'updateButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/editar.png',
 			'deleteButtonImageUrl' => Yii::app()->theme->baseUrl.'/img/system/eliminar.png'
 			
