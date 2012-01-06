@@ -5,15 +5,17 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Ciclo', 'url'=>array('index')),
-	array('label'=>'Create Ciclo', 'url'=>array('create')),
-	array('label'=>'Update Ciclo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Ciclo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Ciclo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Ciclo #<?php echo $model->id; ?></h1>
+<h1>Ver ciclo</h1>
+
+<div class="menucrud">
+<?php
+    echo CHtml::link('Volver <img src="'.Yii::app()->theme->baseUrl.'/img/system/volver.png"/>', 
+                        array('ciclo/index'));
+ ?>
+</div>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
