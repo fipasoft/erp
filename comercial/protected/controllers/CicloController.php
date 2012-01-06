@@ -58,7 +58,19 @@ class CicloController extends Controller {
                         throw new Exception("Ocurrio un errro al crear el annio.", 1);
                     }
                 }
-
+                
+                $model->activo = $_POST['Ciclo']['activo'];
+                
+                if($_POST['Ciclo']['activo']=='1'){
+                    $actual = Ciclo::model() -> find("activo = '1'");
+                    if($actual->id!=""){
+                        $actual->activo = 0;
+                        if (!$actual -> save()) {
+                           throw new Exception("Error al desactivar el ciclo.");
+                        }
+                    }
+                } 
+                 
                 $model -> clave = $annio -> numero;
                 $model -> annio_id = $annio -> id;
                 if ($model -> save()) {
@@ -121,6 +133,22 @@ class CicloController extends Controller {
 
                 $model -> annio_id = $annio -> id;
                 $model -> clave = $clave;
+                
+                if($_POST['Ciclo']['activo'] != ""){
+                    if(!$model->activo){
+                        if($_POST['Ciclo']['activo']=='1'){
+                            $model->activo = $_POST['Ciclo']['activo'];
+                            $actual = Ciclo::model() -> find("activo = '1'");
+                            if($actual->id!=""){
+                                $actual->activo = 0;
+                                if (!$actual -> save()) {
+                                   throw new Exception("Error al desactivar el ciclo.");
+                                }
+                            }
+                        } 
+                    }
+                }
+                
                 if (!$model -> save()) {
                     throw new Exception("Error al guardar el ciclo.");
                 }
