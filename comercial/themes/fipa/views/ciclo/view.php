@@ -13,7 +13,18 @@ $this->menu=array(
 <div class="menucrud">
 <?php
     echo CHtml::link('Volver <img src="'.Yii::app()->theme->baseUrl.'/img/system/volver.png"/>', 
-                        array('ciclo/index'));
+                        array('index'));
+ ?> / 
+ <?php
+    echo 
+        CHtml::link(
+            'Agregar <img src="'.Yii::app()->theme->baseUrl.'/img/system/nuevo.png" alt="nuevo"/>',
+            array('create')
+        );
+ ?> / 
+ <?php
+    echo CHtml::link('Editar <img src="'.Yii::app()->theme->baseUrl.'/img/system/editar.png"/>', 
+                        array('ciclo/update/'.$model->id));
  ?>
 </div>
 <br/>

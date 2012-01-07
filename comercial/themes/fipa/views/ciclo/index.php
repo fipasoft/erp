@@ -9,15 +9,15 @@ $this->breadcrumbs=array(
 <div class="menucrud">
  <?php
 	echo CHtml::link(
-		'<img src="'.Yii::app()->theme->baseUrl.'/img/system/buscar.png" alt="buscar"/> Buscar',
-		array('cursos'),
+		'Buscar <img src="'.Yii::app()->theme->baseUrl.'/img/system/buscar.png" alt="buscar"/>',
+		array('#'),
 		array('id'=>'btnBusqueda')
 	);
- ?> /
+ ?> / 
  <?php
 	echo 
 		CHtml::link(
-			'<img src="'.Yii::app()->theme->baseUrl.'/img/system/nuevo.png" alt="nuevo"/> Agregar',
+			'Agregar <img src="'.Yii::app()->theme->baseUrl.'/img/system/nuevo.png" alt="nuevo"/>',
 			array('create')
 		);
  ?>
@@ -35,6 +35,7 @@ $this->breadcrumbs=array(
 	)); ?>
 </div>
 
+<?php if($dataProvider->totalItemCount>0){ ?>
 <?php
     $cols = array(
             array(            
@@ -55,6 +56,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
     'columns'=> $cols,
 ));
-
-
 ?>
+<?php }else{?>
+<div class="info">
+<br/>
+No se encontro ningun registro para las condiciones establecidas.
+<br/>
+</div>
+<?php } ?>

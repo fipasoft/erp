@@ -85,23 +85,10 @@ class Ciclo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+        $criteria->order = "clave DESC";
 
-		
-		$this->id = trim($this->id);
-		if($this->id!='') {
-			$criteria->compare('id',$this->id,true);
-			$this->filtros = true;
-		}
-		
-		
-		$this->annio_id = trim($this->annio_id);
-		if($this->annio_id!='' && $this->annio_id!='T') {
-			$criteria->compare('annio_id',$this->annio_id,true);
-			$this->filtros = true;
-		}
-		
 		$this->clave = trim($this->clave);
-		if($this->clave!='' && $this->clave!='T') {
+		if($this->clave!='') {
 			$criteria->compare('clave',$this->clave,true);
 			$this->filtros = true;
 		}

@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1>Crear Ciclo</h1>
+<h1>Agregar Ciclo</h1>
 
 <div class="menucrud">
 <?php
